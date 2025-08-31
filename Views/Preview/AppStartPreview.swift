@@ -10,12 +10,5 @@ import SwiftUI
 struct AppStartView_Previews: PreviewProvider {
     static var previews: some View {
         AppStartView()
-//        ItemDetailView(item: ProductListItemModel(
-//            title: "",
-//            description: "",
-//            imageName: "",
-//            price: "",
-//        ))
-//        .environmentObject(NavigationManager())
     }
 }

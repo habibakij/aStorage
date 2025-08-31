@@ -84,11 +84,11 @@ struct HomeView: View {
                     await viewModel.loadItems()
                 }
             }
-            .refreshable {
-                Task {
-                    await viewModel.loadItems()
-                }
-            }
+//            .refreshable {
+//                Task {
+//                    await viewModel.loadItems()
+//                }
+//            }
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

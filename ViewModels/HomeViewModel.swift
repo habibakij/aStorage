@@ -19,8 +19,11 @@ class HomeViewModel: ObservableObject {
     private let dataService = DataService.shared
     
     func loadItems() async {
+        // Only show loading if we don't have data yet
+        let shouldShowLoading = categoryList.isEmpty && productList.isEmpty
+               
         await MainActor.run {
-            isLoading = true
+            isLoading = shouldShowLoading
             errorMessage = ""
         }
         

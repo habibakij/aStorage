@@ -15,4 +15,6 @@ enum NavigationDestination: Hashable {
     case signUp
     case home
     case itemDetail(ProductListItemModel)
+    case booking
+    case success
 }
