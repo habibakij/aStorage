@@ -27,10 +27,8 @@ class SignInViewModel: ObservableObject {
         
         await MainActor.run {
             isLoading = false
-            
             switch result {
             case .success:
-                // Navigation will be handled by the parent view observing authService.isAuthenticated
                 break
             case .failure(let error):
                 errorMessage = error.localizedDescription

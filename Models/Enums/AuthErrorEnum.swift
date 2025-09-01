@@ -22,9 +22,9 @@ enum AuthError: LocalizedError {
         case .invalidEmail:
             return "Please enter a valid email address"
         case .missingFields:
-            return "Please fill in all fields"
+            return "Please fill required fields"
         case .passwordMismatch:
-            return "Passwords do not match"
+            return "Passwords not matching"
         case .weakPassword:
             return "Password must be at least 6 characters"
         case .termsConditionNotAccepted:

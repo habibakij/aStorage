@@ -23,7 +23,7 @@ class AuthenticationService: ObservableObject {
         
         // Simple validation
         guard !email.isEmpty, !password.isEmpty else {
-            return .failure(.invalidCredentials)
+            return .failure(.missingFields)
         }
         
         guard email.contains("@") else {
@@ -62,11 +62,11 @@ class AuthenticationService: ObservableObject {
             return .failure(.weakPassword)
         }
         
-        guard !termsCondition else {
+        guard termsCondition == true else {
             return .failure(.termsConditionNotAccepted)
         }
         
-        // Mock successful registration
+        
         let user = User(id: UUID().uuidString, name: name, email: email)
         
         await MainActor.run {

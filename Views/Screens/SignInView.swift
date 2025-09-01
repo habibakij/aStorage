@@ -18,7 +18,7 @@ struct SignInView: View {
                 
                 VStack {
                     Text("Welcome Back")
-                        .font(.system(size: 50))
+                        .font(.system(size: 40, weight: .bold, design: .default))
                         .foregroundStyle(Color.black)
                     Text("Hey, Good to see you again!")
                         .font(.title2)
@@ -57,7 +57,7 @@ struct SignInView: View {
                 if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
                         .foregroundColor(.red)
-                        .font(.caption)
+                        .font(.system(size: 18, weight: .medium))
                         .fontWeight(.bold)
                 }
                 

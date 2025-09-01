@@ -39,12 +39,6 @@ struct ItemDetailView: View {
                             .fontWeight(.bold)
                         
                         Text(viewModel.item.description).font(.body).lineSpacing(4)
-//                        Text(
-//                            "A short description is a concise summary, usually one or two sentences, that provides a quick overview of a topic, product, or concept. It's designed to be easily understood and to give the reader the most important information without unnecessary details. Think of it as a brief elevator pitch or a quick way to grasp the essence of something."
-//                        )
-//                        .font(.body)
-//                        .lineSpacing(4)
-//                        .lineLimit(4)
                     }
                     
                     Text("Facelities")
@@ -53,18 +47,17 @@ struct ItemDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     ForEach(viewModel.facilities) { facility in
-                        HStack {
-                            Button(action: {
-                                viewModel.toggleFacility(facility)
-                            }) {
-                                Image(systemName: facility.isSelected ? "checkmark.square" : "square")
+                        Button(action: {
+                            viewModel.toggleFacility(facility)
+                        }) {
+                            HStack{
+                                Image(systemName: facility.isSelected ? "checkmark.square.fill" : "square")
                                     .foregroundColor(.blue)
+                                Text(facility.name)
+                                    .font(.body)
+                                Spacer()
                             }
-                            Text(facility.name)
-                                .font(.body)
-                            Spacer()
                         }
-                        .padding(.horizontal)
                     }
                     Text("Your preferance")
                         .font(.title)
@@ -104,9 +97,10 @@ struct ItemDetailView: View {
         }
         .safeAreaInset(edge: .bottom) {
             Button(action: {
-                viewModel.goToBooking(using: navigationManager)
+                viewModel.cartCount += 1
+                //viewModel.goToBooking(using: navigationManager)
             }) {
-                Text("Continue")
+                Text("Add to cart")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -121,10 +115,33 @@ struct ItemDetailView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            
             ToolbarItem(placement: .principal) {
-                Text("Details View")
-                    .font(.system(size: 28, weight: .bold))
+                Text(viewModel.item.title)
+                    .font(.system(size: 20, weight: .bold))
             }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ZStack(alignment: .topTrailing) {
+                    Button(action: {
+                        
+                    }) {
+                        Image(systemName: "cart")
+                            .font(.title2)
+                    }
+                    
+                    if viewModel.cartCount > 0 {
+                        Text("\(viewModel.cartCount)")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                            .padding(6)
+                            .background(Color.red)
+                            .clipShape(Circle())
+                            .offset(x: 10, y: -10)
+                    }
+                }
+            }
+            
         }
     }
 }

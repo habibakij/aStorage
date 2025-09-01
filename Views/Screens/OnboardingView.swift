@@ -16,7 +16,7 @@ struct OnboardingView: View {
             // Top content
             VStack {
                 Text("Get Started")
-                    .font(.system(size: 64))
+                    .font(.system(size: 54, weight: .bold, design: .default))
                     .foregroundStyle(Color.black)
                 Text("Start with sign in and sign up")
                     .font(.title2)

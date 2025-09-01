@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ItemDetailViewModel: ObservableObject {
-    
+    @Published var cartCount: Int = 0
     @Published var item: ProductListItemModel
     
     init(item: ProductListItemModel) {self.item = item}
