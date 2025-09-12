@@ -1,14 +1,14 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  CartView_Previews.swift
+//  aStorage
 //
-//  Created by AKIJ KHAN on 2025-08-31.
+//  Created by AKIJ KHAN on 2025-09-10.
 //
 
 import SwiftUI
 
-struct SuccessView_Previews: PreviewProvider {
+struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessView().environmentObject(NavigationManager())
+        CartView().environmentObject(NavigationManager())
     }
 }

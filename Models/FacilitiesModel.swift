@@ -1,5 +1,5 @@
 //
-//  FacilitiesModel.swift
+//  Facility.swift
 //  aStorage
 //
 //  Created by USER on 2025-07-30.

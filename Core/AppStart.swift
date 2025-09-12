@@ -1,6 +1,6 @@
 //
 //  AppStartView.swift
-//  mvvm_practice_1
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //
@@ -31,6 +31,8 @@ struct AppStartView: View {
                         BookingView()
                     case .success:
                         SuccessView()
+                    case .cartView:
+                        CartView()
                     }
                 }
         }

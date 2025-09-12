@@ -1,5 +1,5 @@
 //
-//  main_app.swift
+//  MainApp.swift
 //  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 @main
-struct MVVMPractive_1: App {
+struct MainApp: App {
     var body: some Scene {
         WindowGroup {
             AppStartView()

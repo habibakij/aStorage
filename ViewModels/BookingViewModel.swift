@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  BookingViewModel.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-08-03.
 //
@@ -10,7 +10,6 @@ import SwiftUI
 // MARK: - Onboarding View & ViewModel
 
 class BookingViewModel: ObservableObject {
-    // Add any onboarding logic here if needed
     @Published var selectedPaymentOption: PaymentOption? = nil
     
     let paymentOptionList: [PaymentOption] = [

@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  ItemDetailView.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //
@@ -34,7 +34,7 @@ struct ItemDetailView: View {
                         
                         Divider()
                         
-                        Text(viewModel.item.title)
+                        Text("Description")
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -65,18 +65,17 @@ struct ItemDetailView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     ForEach(viewModel.facilityOptions) { option in
-                        HStack {
-                            Button(action: {
-                                viewModel.selectFacility(option)
-                            }) {
+                        Button(action: {
+                            viewModel.selectFacility(option)
+                        }) {
+                            HStack{
                                 Image(systemName: viewModel.selectedFacility == option ? "largecircle.fill.circle" : "circle")
                                     .foregroundColor(.blue)
+                                Text(option.name)
+                                    .font(.body)
+                                Spacer()
                             }
-                            Text(option.name)
-                                .font(.body)
-                            Spacer()
                         }
-                        .padding(.horizontal)
                     }
                     Text("Need to")
                         .font(.title)
@@ -88,29 +87,46 @@ struct ItemDetailView: View {
                             .font(.headline)
                             .foregroundColor(.blue)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.bottom, 16)
                 .frame(maxHeight: .infinity, alignment: .top)
             }
         }
         .safeAreaInset(edge: .bottom) {
-            Button(action: {
-                viewModel.cartCount += 1
-                //viewModel.goToBooking(using: navigationManager)
-            }) {
-                Text("Add to cart")
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
+            HStack{
+                Button(action: {
+                    
+                }) {
+                    Text("Buy now")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue.opacity(0.6))
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+                
+                Button(action: {
+                    viewModel.cartCount += 1
+                }) {
+                    Text("Add to cart")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
             }
             .padding(.top, 12)
+            .padding(.horizontal)
             .background(.ultraThinMaterial)
         }
         .navigationBarTitleDisplayMode(.inline)

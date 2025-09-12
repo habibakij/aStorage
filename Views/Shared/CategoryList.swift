@@ -1,5 +1,5 @@
 //
-//  category_item.swift
+//  CategoryListView.swift
 //  akStorage
 //
 //  Created by AKIJ KHAN on 2025-07-02.

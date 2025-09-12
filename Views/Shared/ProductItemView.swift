@@ -1,6 +1,6 @@
 //
 //  ProductItemView.swift
-//  mvvm_practice_1
+//  aStorage
 //
 //  Created by USER on 2025-07-24.
 //
@@ -39,7 +39,7 @@ struct ProductItemView: View {
 
                 Text(index % 2 == 0 ? "M" : "F")
                     .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 4)
                     .background(Color.cyan.opacity(0.5))
                     .foregroundColor(.white)
                     .cornerRadius(6)

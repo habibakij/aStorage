@@ -1,53 +1,89 @@
 //
-//  SuccessView.swift
+//  CartView.swift
 //  aStorage
 //
-//  Created by AKIJ KHAN on 2025-08-31.
+//  Created by AKIJ KHAN on 2025-09-10.
 //
 
 import SwiftUI
 
-struct SuccessView: View {
-    @EnvironmentObject var navigationManager: NavigationManager
+struct CartView: View {
+    @StateObject private var viewModel = CartViewModel()
+    
     var body: some View {
-        VStack(spacing: 20){
-            Spacer()
-            ZStack {
-                Circle()
-                    .fill(Color.green.opacity(0.2))
-                    .frame(width: 120, height: 120)
-                
-                Image(systemName: "checkmark.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.green)
-                    .frame(width: 100, height: 100)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(viewModel.cartItems) { cartItem in
+                    CartItemRow(cartItem: cartItem)
+                }
             }
-            
-            Text("Your purchase has been\nconfirmed")
-                .font(.title)
-                .multilineTextAlignment(.center)
-                .fontWeight(.semibold)
-                .foregroundColor(.green)
-            
-            Spacer()
-            
-            Button(action: {
-                navigationManager.navigate(to: .home)
-            }) {
-                Text("Go to Home")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(12)
-                    .padding(.horizontal)
-                
-            }.padding(.bottom, 12)
-            
+            .padding()
         }
         
+        .navigationBarHidden(false)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Booking Preview")
+                            .font(.system(size: 28, weight: .bold))
+                    }
+                }
+        
+    }
+}
+
+// MARK: - CartItemRow Component
+struct CartItemRow: View {
+    let cartItem: CartItem
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            // Image
+            Image(cartItem.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 140, height: 100)
+                .cornerRadius(12)
+                .clipped()
+            
+            // Content
+            VStack(alignment: .leading, spacing: 8) {
+                Text(cartItem.title)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(1)
+                
+                InfoRow(label: "Category:", value: cartItem.category)
+                InfoRow(label: "Quantity:", value: cartItem.quantity)
+                InfoRow(label: "Price:", value: cartItem.price)
+            }
+            
+            Spacer()
+        }
+        .padding(.all, 8)
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .shadow(color: .gray.opacity(0.2), radius: 4, x: 0, y: 2)
+    }
+}
+
+// MARK: - InfoRow Component
+struct InfoRow: View {
+    let label: String
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Text(label)
+                .font(.subheadline)
+                .fontWeight(.light)
+                .foregroundColor(.secondary)
+            
+            Text(value)
+                .font(.subheadline)
+                .fontWeight(.regular)
+            
+            Spacer()
+        }
     }
 }

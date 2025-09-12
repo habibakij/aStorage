@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  NavigationDestination.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //
@@ -17,4 +17,5 @@ enum NavigationDestination: Hashable {
     case itemDetail(ProductListItemModel)
     case booking
     case success
+    case cartView
 }

@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  DataService.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //
@@ -19,20 +19,81 @@ class DataService {
         try? await Task.sleep(nanoseconds: 1_000_000_000) // 1 second delay
         
         return [
-            ProductListItemModel(title: "Smartphone", description: "Latest model with advanced features", imageName: "image_1", price: "$799"),
-            ProductListItemModel(title: "Laptop", description: "Lightweight and powerful for daily use", imageName: "image_2", price: "$1199"),
-            ProductListItemModel(title: "Headphones", description: "Noise-cancelling wireless headphones", imageName: "image_3", price: "$199"),
-            ProductListItemModel(title: "Smartwatch", description: "Track your fitness and notifications", imageName: "image_4", price: "$299"),
-            ProductListItemModel(title: "Camera", description: "High-resolution DSLR camera", imageName: "image_5", price: "$899"),
-            ProductListItemModel(title: "Bluetooth Speaker", description: "Portable speaker with rich sound", imageName: "image_6", price: "$149"),
-            ProductListItemModel(title: "Tablet", description: "Perfect for reading and light work", imageName: "image_7", price: "$499"),
-            ProductListItemModel(title: "Gaming Console", description: "Next-gen console for immersive games", imageName: "image_8", price: "$499"),
-            ProductListItemModel(title: "Monitor", description: "Ultra-wide monitor for multitasking", imageName: "image_9", price: "$299"),
-            ProductListItemModel(title: "Keyboard", description: "Mechanical keyboard with RGB lighting", imageName: "image_10", price: "$99"),
-            ProductListItemModel(title: "Mouse", description: "Ergonomic and responsive mouse", imageName: "image_11", price: "$59"),
-            ProductListItemModel(title: "Printer", description: "All-in-one color printer", imageName: "image_12", price: "$179")
+            ProductListItemModel(
+                title: "Smartphone",
+                description: "Experience cutting-edge performance with the latest smartphone model. Packed with a stunning display, high-speed processor, and professional-grade camera features to keep you connected and productive on the go.",
+                imageName: "image_1",
+                price: "$799"
+            ),
+            ProductListItemModel(
+                title: "Laptop",
+                description: "This lightweight yet powerful laptop is designed for students and professionals. Enjoy smooth multitasking, long battery life, and sleek portability that makes it perfect for both work and entertainment.",
+                imageName: "image_2",
+                price: "$1199"
+            ),
+            ProductListItemModel(
+                title: "Headphones",
+                description: "Immerse yourself in music with these noise-cancelling wireless headphones. Enjoy crystal-clear sound, deep bass, and comfortable ear cushioning for long hours of listening without distractions.",
+                imageName: "image_3",
+                price: "$199"
+            ),
+            ProductListItemModel(
+                title: "Smartwatch",
+                description: "Track your health, fitness, and notifications right from your wrist. This stylish smartwatch combines modern design with advanced sensors to monitor your daily activity, heart rate, and more.",
+                imageName: "image_4",
+                price: "$299"
+            ),
+            ProductListItemModel(
+                title: "Camera",
+                description: "Capture your world in breathtaking detail with this high-resolution DSLR camera. Perfect for both beginners and professionals, it delivers sharp images, vibrant colors, and exceptional low-light performance.",
+                imageName: "image_5",
+                price: "$899"
+            ),
+            ProductListItemModel(
+                title: "Bluetooth Speaker",
+                description: "Take your music anywhere with this portable Bluetooth speaker. Offering powerful bass, crystal-clear audio, and durable build, it’s perfect for outdoor parties, travel, or relaxing at home.",
+                imageName: "image_6",
+                price: "$149"
+            ),
+            ProductListItemModel(
+                title: "Tablet",
+                description: "A sleek tablet designed for reading, streaming, and light work. With its vivid display, fast processor, and portable design, it’s a versatile companion for both productivity and entertainment.",
+                imageName: "image_7",
+                price: "$499"
+            ),
+            ProductListItemModel(
+                title: "Gaming Console",
+                description: "Step into the next generation of gaming with this powerful console. Enjoy realistic graphics, lightning-fast load times, and a wide library of immersive games to keep you entertained for hours.",
+                imageName: "image_8",
+                price: "$499"
+            ),
+            ProductListItemModel(
+                title: "Monitor",
+                description: "Boost your productivity with this ultra-wide monitor designed for multitasking. Whether for gaming, creative work, or office use, it provides stunning visuals and smooth performance.",
+                imageName: "image_9",
+                price: "$299"
+            ),
+            ProductListItemModel(
+                title: "Keyboard",
+                description: "Enhance your typing and gaming experience with this mechanical RGB keyboard. Featuring customizable lighting effects, durable keys, and ergonomic design for maximum comfort during long use.",
+                imageName: "image_10",
+                price: "$99"
+            ),
+            ProductListItemModel(
+                title: "Mouse",
+                description: "This ergonomic mouse is designed for comfort and precision. With responsive tracking, customizable buttons, and sleek design, it’s ideal for gaming, office tasks, and everyday use.",
+                imageName: "image_11",
+                price: "$59"
+            ),
+            ProductListItemModel(
+                title: "Printer",
+                description: "An all-in-one printer that combines printing, scanning, and copying in one device. Compact yet powerful, it delivers high-quality prints and is perfect for both home and office use.",
+                imageName: "image_12",
+                price: "$179"
+            )
         ]
     }
+
     
     func fetchCategories() async -> [CategoryListItemModel] {
         // Simulate API call

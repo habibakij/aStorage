@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  ItemDetailView_Previews.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //

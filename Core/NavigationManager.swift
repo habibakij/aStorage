@@ -1,6 +1,6 @@
 //
-//  navigationManager.swift
-//  mvvm_practice_1
+//  NavigationManager.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //

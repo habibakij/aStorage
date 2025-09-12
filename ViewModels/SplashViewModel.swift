@@ -1,6 +1,6 @@
 //
-//  SplashView.swift
-//  mvvm_practice_1
+//  SplashViewModel.swift
+//  aStorage
 //
 //  Created by AKIJ KHAN on 2025-07-22.
 //
@@ -11,9 +11,23 @@ import SwiftUI
 
 class SplashViewModel: ObservableObject {
     @Published var isLoading = true
+    @Published var animateImage = false
+    @Published var animateLeftText = false
+    @Published var animateRightText = false
     
     func startApp() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        // Trigger animations
+        withAnimation {
+            animateImage = true
+        }
+        withAnimation(.easeOut(duration: 1.0).delay(0.2)) {
+            animateLeftText = true
+        }
+        withAnimation(.easeOut(duration: 1.0).delay(0.4)) {
+            animateRightText = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.isLoading = false
         }
     }
