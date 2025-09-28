@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemDetailView: View {
+struct DetailView: View {
     @StateObject private var viewModel: ItemDetailViewModel
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -20,12 +20,12 @@ struct ItemDetailView: View {
             ZStack{
                 VStack(spacing: 24) {
                     
-                    Image(viewModel.item.imageName)
-                    //Image("image_1")
+                    Image(safe: viewModel.item.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(height: 250)
                         .cornerRadius(12)
+                        .padding(.top, 24)
                     
                     VStack(alignment: .leading, spacing: 12) {
                         Text(viewModel.item.title)
@@ -105,7 +105,7 @@ struct ItemDetailView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue.opacity(0.6))
+                        .background(Color.cyan)
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
@@ -117,7 +117,6 @@ struct ItemDetailView: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                    
                         .frame(maxWidth: .infinity)
                         .padding()
                         .background(Color.blue)
@@ -140,7 +139,7 @@ struct ItemDetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 ZStack(alignment: .topTrailing) {
                     Button(action: {
-                        
+                        navigationManager.navigate(to: .cartView)
                     }) {
                         Image(systemName: "cart")
                             .font(.title2)

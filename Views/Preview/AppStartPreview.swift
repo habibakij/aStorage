@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppStartView_Previews: PreviewProvider {
     static var previews: some View {
-        AppStartView()
+        //AppStartView()
+        //HomeView()
+        CartView()
     }
 }

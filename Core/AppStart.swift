@@ -26,7 +26,7 @@ struct AppStartView: View {
                     case .home:
                         HomeView()
                     case .itemDetail(let item):
-                        ItemDetailView(item: item)
+                        DetailView(item: item)
                     case .booking:
                         BookingView()
                     case .success:

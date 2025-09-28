@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FlowLayout<Content: View>: View {
     let items: [String]
-    let spacing: CGFloat
     let content: (String) -> Content
 
     @State private var totalHeight = CGFloat.zero
@@ -30,7 +29,7 @@ struct FlowLayout<Content: View>: View {
         return ZStack(alignment: .topLeading) {
             ForEach(items, id: \.self) { item in
                 content(item)
-                    .padding([.horizontal, .vertical], 4)
+                    .padding([.horizontal, .vertical], 2)
                     .alignmentGuide(.leading) { d in
                         if abs(width - d.width) > geometry.size.width {
                             width = 0
@@ -38,7 +37,7 @@ struct FlowLayout<Content: View>: View {
                         }
                         let result = width
                         if item == items.last! {
-                            width = 0 // reset
+                            width = 0
                         } else {
                             width -= d.width
                         }
@@ -47,7 +46,7 @@ struct FlowLayout<Content: View>: View {
                     .alignmentGuide(.top) { _ in
                         let result = height
                         if item == items.last! {
-                            height = 0 // reset
+                            height = 0
                         }
                         return result
                     }

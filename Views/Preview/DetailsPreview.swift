@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailView(item: ProductListItemModel(
+        DetailView(item: ProductListItemModel(
             title: "",
             description: "",
             imageName: "",
+            discountPrice: "",
             price: "",
         ))
         .environmentObject(NavigationManager())

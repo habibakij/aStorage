@@ -31,20 +31,26 @@ struct ProductItemView: View {
                 .foregroundColor(.gray)
                 .lineLimit(2)
 
-            HStack {
-                Text(product.price)
-                    .font(.system(size: 24, weight: .bold))
+            HStack(alignment: .center) {
+                HStack(spacing: 2){
+                    Text(product.discountPrice)
+                        .font(.system(size: 12, weight: .light))
+                        .strikethrough(true, color: .black)
+                    Text(product.price).font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(.red)
+                }
 
                 Spacer()
 
                 Text(index % 2 == 0 ? "M" : "F")
-                    .padding(.horizontal, 12)
+                    .padding(.horizontal, 8)
                     .padding(.vertical, 4)
-                    .background(Color.cyan.opacity(0.5))
+                    .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(6)
                     .fontWeight(.bold)
             }
+            .padding(.top, 2)
         }
         .frame(width: (UIScreen.main.bounds.width - 60) / 2)
         .onTapGesture {

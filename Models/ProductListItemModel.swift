@@ -12,5 +12,6 @@ struct ProductListItemModel: Identifiable, Hashable {
     let title: String
     let description: String
     let imageName: String
+    let discountPrice: String
     let price: String
 }
