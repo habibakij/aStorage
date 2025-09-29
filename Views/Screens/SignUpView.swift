@@ -112,7 +112,7 @@ struct SignUpView: View {
                 .disabled(viewModel.isLoading)
                 
                 Button(action: {
-                    navigationManager.navigate(to: .signIn)
+                    navigationManager.navigate(to: .signInView)
                 }) {
                     HStack{
                         Text("Already have an account,")
@@ -133,7 +133,7 @@ struct SignUpView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: authService.isAuthenticated) {oldValue, isAuthenticated in
             if isAuthenticated {
-                navigationManager.navigate(to: .home)
+                navigationManager.navigate(to: .homeView)
             }
         }
     }

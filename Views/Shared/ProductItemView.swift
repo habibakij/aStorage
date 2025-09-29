@@ -35,9 +35,10 @@ struct ProductItemView: View {
                 HStack(spacing: 2){
                     Text(product.discountPrice)
                         .font(.system(size: 12, weight: .light))
-                        .strikethrough(true, color: .black)
-                    Text(product.price).font(.system(size: 18, weight: .semibold))
                         .foregroundColor(.red)
+                        .strikethrough(true, color: .red)
+                    Text(product.price).font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.blue)
                 }
 
                 Spacer()

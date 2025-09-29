@@ -15,8 +15,8 @@ struct CartItem: Identifiable {
     let keywords: [String]
     let quantity: Int
     let quantityType: QuantityType
-    let discountPrice: String
-    let price: String
+    let discountPrice: Double
+    let price: Double
     let imageName: String
 
     init(
@@ -26,8 +26,8 @@ struct CartItem: Identifiable {
         keywords: [String],
         quantity: Int,
         quantityType: QuantityType,
-        discountPrice: String,
-        price: String,
+        discountPrice: Double,
+        price: Double,
         imageName: String
     ) {
         self.id = id

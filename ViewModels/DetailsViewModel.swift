@@ -57,6 +57,6 @@ class ItemDetailViewModel: ObservableObject {
     }
     
     func goToBooking(using navigationManager: NavigationManager) {
-        navigationManager.navigate(to: .booking)
+        navigationManager.navigate(to: .bookingView)
     }
 }

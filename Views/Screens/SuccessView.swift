@@ -33,7 +33,7 @@ struct SuccessView: View {
             Spacer()
             
             Button(action: {
-                navigationManager.navigate(to: .home)
+                navigationManager.navigate(to: .homeView)
             }) {
                 Text("Go to Home")
                     .font(.title2)

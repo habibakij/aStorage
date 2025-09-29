@@ -104,10 +104,10 @@ struct DetailView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding()
+                        .padding(.all, 12)
                         .background(Color.cyan)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                        .cornerRadius(8)
+                        .padding(.leading, 12)
                 }
                 
                 Button(action: {
@@ -118,15 +118,14 @@ struct DetailView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding()
+                        .padding(.all, 12)
                         .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                        .cornerRadius(8)
+                        .padding(.trailing, 12)
                 }
             }
             .padding(.top, 12)
-            .padding(.horizontal)
-            .background(.ultraThinMaterial)
+            .background(.white)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

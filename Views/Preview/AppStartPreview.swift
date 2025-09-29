@@ -11,6 +11,7 @@ struct AppStartView_Previews: PreviewProvider {
     static var previews: some View {
         //AppStartView()
         //HomeView()
-        CartView()
+        //CartView()
+        CheckoutView()
     }
 }

@@ -9,26 +9,26 @@ import SwiftUI
 
 // MARK: - Splash View & ViewModel
 
+@MainActor
 class SplashViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var animateImage = false
     @Published var animateLeftText = false
     @Published var animateRightText = false
-    
+    private var hasStarted = false
+
     func startApp() {
-        // Trigger animations
-        withAnimation {
+        guard !hasStarted else { return }
+        hasStarted = true
+
+        Task { @MainActor in
             animateImage = true
-        }
-        withAnimation(.easeOut(duration: 1.0).delay(0.2)) {
+            try? await Task.sleep(nanoseconds: 200_000_000) // 0.2s
             animateLeftText = true
-        }
-        withAnimation(.easeOut(duration: 1.0).delay(0.4)) {
+            try? await Task.sleep(nanoseconds: 200_000_000) // +0.2s
             animateRightText = true
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            self.isLoading = false
+            try? await Task.sleep(nanoseconds: 3_600_000_000) // ~3.6s
+            isLoading = false
         }
     }
 }

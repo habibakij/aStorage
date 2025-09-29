@@ -68,7 +68,8 @@ struct HomeView: View {
                         ) {
                             ForEach(Array(viewModel.productList.enumerated()), id: \.offset) { index, product in
                                 ProductItemView(product: product, index: index) {
-                                    navigationManager.navigate(to: .itemDetail(product))
+                                    navigationManager
+                                        .navigate(to: .itemDetailView(product))
                                 }
                             }
                         }

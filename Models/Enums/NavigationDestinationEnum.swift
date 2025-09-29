@@ -10,12 +10,13 @@ import SwiftUI
 // MARK: - NavigationDestination
 
 enum NavigationDestination: Hashable {
-    case onboarding
-    case signIn
-    case signUp
-    case home
-    case itemDetail(ProductListItemModel)
-    case booking
-    case success
+    case onboardingView
+    case signInView
+    case signUpView
+    case homeView
+    case itemDetailView(ProductListItemModel)
+    case bookingView
+    case successView
     case cartView
+    case checkoutView
 }

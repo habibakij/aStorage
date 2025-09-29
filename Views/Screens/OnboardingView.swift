@@ -26,7 +26,7 @@ struct OnboardingView: View {
             
             VStack() {
                 Button(action: {
-                    navigationManager.navigate(to: .signUp)
+                    navigationManager.navigate(to: .signUpView)
                 }) {
                     Text("Sign Up")
                         .frame(width: 280, height: 60, alignment: .center)
@@ -39,7 +39,7 @@ struct OnboardingView: View {
                 Spacer().frame(height: 12)
                 
                 Button(action: {
-                    navigationManager.navigate(to: .signIn)
+                    navigationManager.navigate(to: .signInView)
                 }) {
                     Text("Sign In")
                         .frame(width: 280, height: 60, alignment: .center)

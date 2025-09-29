@@ -55,7 +55,7 @@ struct BookingView: View {
         }
         .safeAreaInset(edge: .bottom) {
             Button(action: {
-                navigationManager.navigate(to: .success)
+                navigationManager.navigate(to: .successView)
             }) {
                 Text("iBooking")
                     .font(.title2)

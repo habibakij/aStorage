@@ -17,22 +17,24 @@ struct AppStartView: View {
             SplashView()
                 .navigationDestination(for: NavigationDestination.self) { destination in
                     switch destination {
-                    case .onboarding:
+                    case .onboardingView:
                         OnboardingView()
-                    case .signIn:
+                    case .signInView:
                         SignInView()
-                    case .signUp:
+                    case .signUpView:
                         SignUpView()
-                    case .home:
+                    case .homeView:
                         HomeView()
-                    case .itemDetail(let item):
+                    case .itemDetailView(let item):
                         DetailView(item: item)
-                    case .booking:
+                    case .bookingView:
                         BookingView()
-                    case .success:
+                    case .successView:
                         SuccessView()
                     case .cartView:
                         CartView()
+                    case .checkoutView:
+                        CheckoutView()
                     }
                 }
         }

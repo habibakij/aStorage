@@ -83,7 +83,7 @@ struct SignInView: View {
                     .disabled(viewModel.isLoading)
                     
                     Button(action: {
-                        navigationManager.navigate(to: .signUp)
+                        navigationManager.navigate(to: .signUpView)
                     }){
                         HStack{
                             Text("Don't have an account,")
@@ -104,7 +104,7 @@ struct SignInView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: authService.isAuthenticated) {oldValue, isAuthenticated in
             if isAuthenticated {
-                navigationManager.navigate(to: .home)
+                navigationManager.navigate(to: .homeView)
             }
         }
     }
