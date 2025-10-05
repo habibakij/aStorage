@@ -44,7 +44,7 @@ struct SplashView: View {
         }
         .onChange(of: viewModel.isLoading) {_, isLoading in
             if !isLoading {
-                navigationManager.navigate(to: .onboarding)
+                navigationManager.navigate(to: .onboardingView)
             }
         }
     }

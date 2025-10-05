@@ -80,17 +80,6 @@ struct BookingView: View {
     }
 }
 
-struct SectionHeader: View {
-    let title: String
-    var body: some View {
-        Text(title)
-            .font(.title2)
-            .fontWeight(.bold)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal)
-    }
-}
-
 struct InfoCard: View {
     let items: [(String, String)]
     @ObservedObject var viewModel: BookingViewModel

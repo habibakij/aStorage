@@ -48,7 +48,8 @@ struct CartView: View {
                 }
                 Spacer()
                 Button(action: {
-                    navigationManager.navigate(to: .checkoutView)
+                    navigationManager
+                        .navigate(to: .checkoutView(viewModel.cartItems))
                 }) {
                     Text("Checkout")
                         .font(.title2)

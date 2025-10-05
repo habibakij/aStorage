@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - CartItem Model
-struct CartItem: Identifiable {
+struct CartItem: Identifiable, Hashable {
     let id: UUID
     let title: String
     let selBy: String
