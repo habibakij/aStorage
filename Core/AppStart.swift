@@ -33,8 +33,8 @@ struct AppStartView: View {
                         SuccessView()
                     case .cartView:
                         CartView()
-                    case .checkoutView:
-                        CheckoutView()
+                    case .checkoutView(let cartItems):
+                        CheckoutView(viewModel: CheckoutViewModel(cartItems: cartItems))
                     }
                 }
         }

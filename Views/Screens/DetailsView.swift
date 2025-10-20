@@ -138,10 +138,21 @@ struct DetailView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 ZStack(alignment: .topTrailing) {
                     Button(action: {
-                        navigationManager.navigate(to: .cartView)
+                        if viewModel.cartCount == 0 {
+                            viewModel.showEmptyCartAlert = true
+                        } else {
+                            navigationManager.navigate(to: .cartView)
+                        }
                     }) {
                         Image(systemName: "cart")
                             .font(.title2)
+                    }
+                    .alert(isPresented: $viewModel.showEmptyCartAlert) {
+                        Alert(
+                            title: Text("Cart is Empty"),
+                            message: Text("You have no items in your cart."),
+                            dismissButton: .default(Text("OK"))
+                        )
                     }
                     
                     if viewModel.cartCount > 0 {
@@ -155,6 +166,7 @@ struct DetailView: View {
                     }
                 }
             }
+
             
         }
     }

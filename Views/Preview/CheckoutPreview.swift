@@ -9,6 +9,6 @@ import SwiftUI
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView().environmentObject(NavigationManager())
+        //CheckoutView().environmentObject(NavigationManager())
     }
 }

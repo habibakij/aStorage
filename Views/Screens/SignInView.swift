@@ -72,7 +72,7 @@ struct SignInView: View {
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         } else {
                             Text("Sign In")
-                                .frame(width: 280, height: 60)
+                                .frame(width: 350, height: 60)
                                 .background(Color.blue)
                                 .foregroundColor(.white)
                                 .font(.system(size: 24, weight: .bold))
@@ -102,7 +102,7 @@ struct SignInView: View {
                 .clipShape(SingleCornerRadius(radius: 40, corners: [.topLeft, .topRight]))
         }
         .navigationBarTitleDisplayMode(.inline)
-        .onChange(of: authService.isAuthenticated) {oldValue, isAuthenticated in
+        .onChange(of: authService.isAuthenticated) { isAuthenticated in
             if isAuthenticated {
                 navigationManager.navigate(to: .homeView)
             }

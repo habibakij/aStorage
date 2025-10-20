@@ -18,5 +18,5 @@ enum NavigationDestination: Hashable {
     case bookingView
     case successView
     case cartView
-    case checkoutView([CartItem])
+    case checkoutView(cartItems: [CartItem])
 }

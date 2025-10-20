@@ -31,7 +31,7 @@ class AuthenticationService: ObservableObject {
         }
         
         // Mock successful login
-        let user = User(id: UUID().uuidString, name: "John Doe", email: email)
+        let user = User(id: UUID().uuidString, name: "akij", email: email)
         
         await MainActor.run {
             self.currentUser = user

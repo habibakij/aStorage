@@ -38,7 +38,7 @@ struct ProductItemView: View {
                         .foregroundColor(.red)
                         .strikethrough(true, color: .red)
                     Text(product.price).font(.system(size: 16, weight: .bold))
-                        .foregroundColor(.blue)
+                        .foregroundColor(.black)
                 }
 
                 Spacer()

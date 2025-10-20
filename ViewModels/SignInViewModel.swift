@@ -28,6 +28,7 @@ class SignInViewModel: ObservableObject {
         await MainActor.run {
             isLoading = false
             switch result {
+                
             case .success:
                 break
             case .failure(let error):
